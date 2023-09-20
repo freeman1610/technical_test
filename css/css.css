@@ -1,0 +1,44 @@
+/* SCROLL-TOP-BUTTON */
+
+.scroll-top-button img {
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0.1em;
+    right: 0.1em;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s;
+    background-color: #0d6efd;
+}
+
+.show {
+    z-index: 10;
+}
+
+.show .scroll-top-button {
+    animation: popup 0.3s ease-in-out;
+    width: 6.6rem;
+    height: 6.6rem;
+    z-index: 11;
+}
+
+.show img {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+    0% {
+        width: 0rem;
+        height: 0rem;
+    }
+
+    50% {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    100% {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+}
