@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // ------------- Loading objects ------------------
 
 function loadProducts(category_id, table, nameCategory) {
-    fetch(`../routes/load_products.php?category_id=${category_id}`)
+    fetch(`routes/load_products.php?category_id=${category_id}`)
         .then(response => response.json())
         .then(products => {
             createProductTable(products, table, nameCategory, category_id)
@@ -109,7 +109,7 @@ function loadProducts(category_id, table, nameCategory) {
 
 function loadFeatures(product_id, row) {
     // Make a fetch request to load feature data from the server
-    fetch(`../routes/load_feature.php?product_id=${product_id}`, {
+    fetch(`routes/load_feature.php?product_id=${product_id}`, {
         method: 'GET',
     })
         .then(response => response.json()) // Assuming the server responds with JSON data
@@ -131,7 +131,7 @@ function hideFeatures(row) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('../routes/load_categories.php', {
+    fetch('routes/load_categories.php', {
         method: 'GET',
     })
         .then(response => response.json())
